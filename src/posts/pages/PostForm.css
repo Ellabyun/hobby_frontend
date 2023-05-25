@@ -1,0 +1,58 @@
+.post-form {
+  list-style: none;
+  margin: 0 auto;
+  margin-top: 7rem;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 6px;
+  background: white;
+}
+
+.post-form img {
+  width: 100px;
+}
+.prev-image {
+  /* width: 150px; */
+  width: 80%;
+  display: flex;
+
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-gap:; */
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.prev-image__item {
+  display: flex;
+  position: relative;
+}
+.prev-image__checkbox {
+  position: absolute;
+  display: flex;
+  /* align-items: fl; */
+  /* justify-content: flex-end; */
+}
+
+/* .prev-image__checkbox label {
+  top: 2px;
+  left: -20px;
+  border-radius: 100%;
+  padding: 2px;
+} */
+
+.delete-icon {
+  background-color: white;
+  padding: 3px;
+  width: 10px;
+  height: 10px;
+  /* transition: all 0.2s ease-out; */
+  /* border-radius: 100%; */
+}
+
+.delete-icon:hover {
+  /* transform: scale(1.05); */
+  cursor: pointer;
+}

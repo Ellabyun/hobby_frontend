@@ -1,0 +1,15 @@
+.post-detail__container {
+  /* width: 100%; */
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* .post-detail__content {
+  margin-top: 1rem;
+} */
+.post-detail__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}

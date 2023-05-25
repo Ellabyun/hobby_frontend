@@ -1,0 +1,16 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.avatar img {
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 1rem 0.2rem 1rem;
+}
+
+.avatar a {
+  display: flex;
+  align-items: center;
+}
