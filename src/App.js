@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import Home from './posts/pages/Home';
@@ -10,22 +10,13 @@ import UserPosts from './posts/pages/UserPosts';
 import PostDetail from './posts/pages/PostDetail';
 import Auth from './users/pages/Auth';
 import { AuthContext } from './shared/contexts/auth-context';
+import { useAuth } from './shared/hooks/auth-hook';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userId, setUserId] = useState();
-  const login = useCallback((uid) => {
-    setIsLoggedIn(true);
-    setUserId(uid);
-  }, []);
-  const logout = useCallback(() => {
-    setIsLoggedIn(false);
-    setUserId(null);
-  }, []);
-
+  const { token, login, logout, userId } = useAuth();
   let routes;
 
-  if (isLoggedIn) {
+  if (token) {
     routes = (
       <>
         <Routes>
@@ -58,7 +49,8 @@ function App() {
     <div className='App'>
       <AuthContext.Provider
         value={{
-          isLoggedIn: isLoggedIn,
+          isLoggedIn: !!token,
+          token: token,
           userId: userId,
           login: login,
           logout: logout,

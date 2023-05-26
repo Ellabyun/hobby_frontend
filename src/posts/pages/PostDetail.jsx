@@ -34,7 +34,14 @@ export default function PostDetail() {
   const confirmDeleteHandler = async () => {
     setShowConfirmModal(false);
     try {
-      await sendRequest('http://localhost:5000/api/posts/' + postId, 'DELETE');
+      await sendRequest(
+        'http://localhost:5000/api/posts/' + postId,
+        'DELETE',
+        null,
+        {
+          Authorization: 'Bearer ' + auth.token,
+        }
+      );
       navigate('/');
     } catch (err) {}
   };

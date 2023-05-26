@@ -91,7 +91,10 @@ export default function UpdatePost() {
       await sendRequest(
         `http://localhost:5000/api/posts/${postId}`,
         'PATCH',
-        formData
+        formData,
+        {
+          Authorization: 'Bearer ' + auth.token,
+        }
       );
       navigate(`/${auth.userId}/posts`);
     } catch (err) {}
